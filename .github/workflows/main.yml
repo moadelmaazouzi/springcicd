@@ -1,29 +1,29 @@
 name: build and deploy spring app
+
 on:
   push:
     branches:
       - master
+
 jobs:
   build-deploy:
     name: build and deploy spring boot for beginner
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
+
     steps:
       - name: checkout code
-        uses: action/checkout@v3
+        uses: actions/checkout@v3
+
       - name: set up jdk 17
-        uses: action/setup-java@v3
+        uses: actions/setup-java@v3
         with:
-          distribution: "correcto"
+          distribution: "temurin" # ou "adopt", "zulu", etc.
           java-version: 17
+
       - name: unit test
         run: mvn -B test --file pom.xml
-      - name : build the application
-        run : |
-          mvn clean 
+
+      - name: build the application
+        run: |
+          mvn clean
           mvn -B package --file pom.xml
-          
-          
-        
-
-
-
