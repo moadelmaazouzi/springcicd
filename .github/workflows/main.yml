@@ -34,7 +34,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: build Docker image
         run: |
-          docker build -t elmaazouzi.moa.fst@uhp.ac.ma/springcicd:latest .
+          docker build -t elmaazouzi.moa.fst@uhp.ac.ma/springcicd .
       - name: push Docker image to Docker Hub
         run: |
-          docker push elmaazouzi.moa.fst@uhp.ac.ma/springcicd:latest
+          docker push elmaazouzi.moa.fst@uhp.ac.ma/springcicd
