@@ -34,7 +34,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: build Docker image
         run: |
-          docker build -t moad807/springcicd:latest.
+          docker build -t moad807/springcicd:latest .
       - name: push Docker image to Docker Hub
         run: |
           docker push moad807/springcicd:latest
